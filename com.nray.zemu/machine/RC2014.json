@@ -1,0 +1,65 @@
+{
+	"Name": "RC2014",
+	"Desc": "Modular Retrocomputer",
+	"Core": "Z80",
+	"CoreData": { 
+		"AddressBus": { 
+			"Pull":"Up",
+			"Width":8,
+			"Length":65536,
+			"Component": {
+				"Type":"MapDirect",
+				"ComponentData": {
+					"Map" : [
+						{ "Start":0, "Size":8192 },
+						{ "Start":32768, "Size":32768 }
+					],
+					"Components": [
+						{
+							"Type": "ROM",
+							"ComponentData": {
+								"Contents": "rc2014_basic.rom"
+							}
+						},
+						{
+							"Type": "RAM",
+							"ComponentData": {
+								"Contents": 0,
+								"Size":32768
+							}
+						}
+					]
+				}
+			}
+		},
+		"IOBus": {
+			"Pull":"Up",
+			"Width":8,
+			"Length":256,
+			"Component": {
+				"Type":"MapRepeat",
+				"ComponentData": {
+					"Map": [
+						{ "Start":0, "End":256 }
+					],
+					"Components": [
+						{
+							"Type": "68B50",
+							"ComponentData": {
+								"Ports": {
+									"COM0": {
+										"Component": "Term",
+										"Baud":9600
+									},
+									"COM1": {
+										"Component": "Loopback"
+									}
+								}
+							}
+						}
+					]
+				}
+			}
+		}	
+	}
+}
