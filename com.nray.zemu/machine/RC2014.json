@@ -5,8 +5,6 @@
 	"CoreData": { 
 		"AddressBus": { 
 			"Pull":"Up",
-			"Width":8,
-			"Length":65536,
 			"Component": {
 				"Type":"MapDirect",
 				"ComponentData": {
@@ -34,8 +32,6 @@
 		},
 		"IOBus": {
 			"Pull":"Up",
-			"Width":8,
-			"Length":256,
 			"Component": {
 				"Type":"MapRepeat",
 				"ComponentData": {
@@ -48,8 +44,7 @@
 							"ComponentData": {
 								"Ports": {
 									"COM0": {
-										"Component": "Term",
-										"Baud":9600
+										"Component": "Term"
 									},
 									"COM1": {
 										"Component": "Loopback"
